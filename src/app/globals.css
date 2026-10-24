@@ -1,26 +1,327 @@
 @import "tailwindcss";
 
+/* ─── The Creations: Museum Gallery & Editorial Design System ─── */
+/* Inspired by Google Arts & Culture and Dessine Art */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Warm gallery palette */
+  --bg-primary: #faf8f5;
+  --bg-secondary: #f4efe6;
+  --bg-tertiary: #ede7dc;
+  --bg-card: #ffffff;
+  --bg-dark: #121214;
+  --bg-dark-card: #1c1c1f;
+  --bg-glass: rgba(250, 248, 245, 0.92);
+
+  /* Typography Colors */
+  --text-primary: #161618;
+  --text-secondary: #4a4a50;
+  --text-muted: #73737c;
+  --text-inverse: #f8f8f9;
+  --text-inverse-muted: #a1a1aa;
+
+  /* Refined Artisanal Accents */
+  --bronze: #8c734b;
+  --bronze-light: #b89c6c;
+  --bronze-dark: #695332;
+  --bronze-soft: rgba(140, 115, 75, 0.08);
+
+  --terracotta: #9e533b;
+  --forest: #2d4536;
+  --slate-blue: #2c4456;
+
+  /* Architectural Borders */
+  --border-subtle: #e8e3d8;
+  --border-medium: #d4ccbd;
+  --border-strong: #161618;
+
+  /* Elevations */
+  --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 4px 20px rgba(24, 24, 27, 0.04);
+  --shadow-lift: 0 12px 36px rgba(24, 24, 27, 0.08);
+  --shadow-dropdown: 0 16px 48px rgba(0, 0, 0, 0.12);
+
+  /* Fonts */
+  --font-serif: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  --font-display: var(--font-playfair), 'Playfair Display', Georgia, serif;
+  --font-body: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--text-primary);
+  --color-card: var(--bg-card);
+  --color-secondary: var(--bg-secondary);
+  --color-tertiary: var(--bg-tertiary);
+  --color-bronze: var(--bronze);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-medium: var(--border-medium);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ─── Base Typography & Elements ─── */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-serif);
+  letter-spacing: -0.015em;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* ─── Gallery Components & Utilities ─── */
+.container-custom {
+  max-width: 1360px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container-custom {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Museum Artwork Card Frame */
+.artwork-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+}
+
+.artwork-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-medium);
+  box-shadow: var(--shadow-lift);
+}
+
+/* Clean Editorial Button */
+.btn-gallery-primary {
+  background-color: #161618 !important;
+  color: #ffffff !important;
+  border: 1px solid #161618 !important;
+  padding: 0.875rem 1.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-gallery-primary:hover {
+  background-color: #8c734b !important;
+  border-color: #8c734b !important;
+  color: #ffffff !important;
+}
+
+.btn-gallery-outline {
+  background-color: transparent !important;
+  color: #161618 !important;
+  border: 1px solid #161618 !important;
+  padding: 0.875rem 1.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-gallery-outline:hover {
+  background-color: #161618 !important;
+  color: #ffffff !important;
+}
+
+/* Museum Exhibition Tag */
+.museum-tag {
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--bronze);
+}
+
+/* Refined Separators */
+.gallery-divider {
+  height: 1px;
+  background-color: var(--border-subtle);
+  width: 100%;
+}
+
+/* Clean Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-medium);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bronze);
+}
+
+/* Toast styling override for sonner */
+[data-sonner-toaster] {
+  --normal-bg: #ffffff !important;
+  --normal-border: #e7e2d8 !important;
+  --normal-text: #18181b !important;
+}
+
+/* ─── Nocturnal Gallery / Dark Mode Design System ─── */
+html.dark, .dark {
+  /* Nocturnal Obsidian Gallery Palette */
+  --bg-primary: #0c0c0e;
+  --bg-secondary: #141417;
+  --bg-tertiary: #1c1c21;
+  --bg-card: #151518;
+  --bg-dark: #070709;
+  --bg-dark-card: #101013;
+  --bg-glass: rgba(12, 12, 14, 0.94);
+
+  /* Typography Colors in Dark Mode */
+  --text-primary: #f5f2eb;
+  --text-secondary: #c2bfb5;
+  --text-muted: #87847a;
+  --text-inverse: #161618;
+  --text-inverse-muted: #52525b;
+
+  /* Gilded Antique Bronze in Dark Mode */
+  --bronze: #d6b583;
+  --bronze-light: #e8cca0;
+  --bronze-dark: #ad8d5c;
+  --bronze-soft: rgba(214, 181, 131, 0.12);
+
+  /* Architectural Borders */
+  --border-subtle: #24242a;
+  --border-medium: #363640;
+  --border-strong: #f5f2eb;
+
+  /* Elevations */
+  --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.5);
+  --shadow-lift: 0 12px 36px rgba(0, 0, 0, 0.7);
+  --shadow-dropdown: 0 16px 48px rgba(0, 0, 0, 0.85);
+
+  color-scheme: dark;
+}
+
+/* ─── Seamless Dark Mode Overrides for Hardcoded Components ─── */
+html.dark body {
+  background-color: #0c0c0e !important;
+  color: #f5f2eb !important;
+}
+
+/* Backgrounds */
+html.dark [class*="bg-[#faf8f5]"] {
+  background-color: #0c0c0e !important;
+}
+html.dark [class*="bg-[#faf8f5]/95"] {
+  background-color: rgba(12, 12, 14, 0.95) !important;
+}
+html.dark [class*="bg-[#f4efe6]"] {
+  background-color: #141417 !important;
+}
+html.dark [class*="bg-[#ffffff]"] {
+  background-color: #151518 !important;
+}
+html.dark [class*="bg-[#ede7dc]"] {
+  background-color: #1c1c21 !important;
+}
+
+/* Text colors */
+html.dark [class*="text-[#161618]"] {
+  color: #f5f2eb !important;
+}
+html.dark [class*="text-[#4a4a50]"] {
+  color: #c2bfb5 !important;
+}
+html.dark [class*="text-[#73737c]"] {
+  color: #87847a !important;
+}
+
+/* Borders */
+html.dark [class*="border-[#e8e3d8]"] {
+  border-color: #24242a !important;
+}
+html.dark [class*="border-[#d4ccbd]"] {
+  border-color: #363640 !important;
+}
+html.dark [class*="border-[#161618]"] {
+  border-color: #f5f2eb !important;
+}
+
+/* Buttons in Dark Mode */
+html.dark .btn-gallery-primary,
+html.dark button[class*="!bg-[#161618]"],
+html.dark a[class*="!bg-[#161618]"],
+html.dark [class*="!bg-[#161618]"] {
+  background-color: #f5f2eb !important;
+  color: #0c0c0e !important;
+  border-color: #f5f2eb !important;
+}
+html.dark .btn-gallery-primary:hover,
+html.dark button[class*="!bg-[#161618]"]:hover,
+html.dark a[class*="!bg-[#161618]"]:hover,
+html.dark [class*="!bg-[#161618]"]:hover {
+  background-color: #d6b583 !important;
+  color: #0c0c0e !important;
+  border-color: #d6b583 !important;
+}
+
+html.dark .btn-gallery-outline {
+  border-color: #f5f2eb !important;
+  color: #f5f2eb !important;
+  background-color: transparent !important;
+}
+html.dark .btn-gallery-outline:hover {
+  background-color: #f5f2eb !important;
+  color: #0c0c0e !important;
+}
+
+/* Inputs in Dark Mode */
+html.dark input,
+html.dark textarea,
+html.dark select {
+  background-color: #141417 !important;
+  color: #f5f2eb !important;
+  border-color: #2e2e36 !important;
+}
+html.dark input:focus,
+html.dark textarea:focus,
+html.dark select:focus {
+  border-color: #d6b583 !important;
+}
+
+/* Toast styling override in dark mode */
+html.dark [data-sonner-toaster] {
+  --normal-bg: #151518 !important;
+  --normal-border: #2e2e36 !important;
+  --normal-text: #f5f2eb !important;
 }
