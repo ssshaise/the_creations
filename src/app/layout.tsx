@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
@@ -23,6 +23,14 @@ const cormorant = Cormorant_Garamond({
   weight: ["300", "400", "500", "600"],
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#faf8f5",
+  viewportFit: "cover",
+};
 
 export const metadata: Metadata = {
   title: "The Creations — Handcrafted Resin Art | Tables, Coasters, Wall Art & More",
@@ -59,34 +67,17 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${inter.variable} ${playfair.variable} ${cormorant.variable} h-full antialiased`}
+      className={`${inter.variable} ${playfair.variable} ${cormorant.variable} antialiased scroll-smooth`}
     >
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              try {
-                const stored = localStorage.getItem('the-creations-theme');
-                if (stored) {
-                  const parsed = JSON.parse(stored);
-                  if (parsed && parsed.state && parsed.state.theme === 'dark') {
-                    document.documentElement.classList.add('dark');
-                  }
-                }
-              } catch (e) {}
-            `,
-          }}
-        />
-        {/* Razorpay Script */}
+      <body className="min-h-screen flex flex-col bg-background text-foreground selection:bg-amber-100 selection:text-amber-900 overflow-x-hidden">
+        {children}
+        <InquiryModal />
+        <ToastProvider />
+        {/* Razorpay Script inside body for Next.js & Safari stability */}
         <Script
           src="https://checkout.razorpay.com/v1/checkout.js"
           strategy="lazyOnload"
         />
-      </head>
-      <body className="min-h-full flex flex-col bg-background text-foreground selection:bg-amber-100 selection:text-amber-900">
-        {children}
-        <InquiryModal />
-        <ToastProvider />
       </body>
     </html>
   );

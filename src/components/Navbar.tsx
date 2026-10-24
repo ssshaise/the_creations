@@ -52,7 +52,7 @@ export default function Navbar() {
     <>
       <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
         {/* Top Editorial Announcement Bar */}
-        <div className="bg-[#161618] text-[#f4efe6] text-[11px] font-medium tracking-[0.14em] uppercase py-2 px-4 text-center border-b border-[#2a2a2d]">
+        <div className="bg-[#161618] text-[#f4efe6] text-[10px] sm:text-[11px] font-medium tracking-[0.08em] sm:tracking-[0.14em] uppercase py-1.5 sm:py-2 px-3 sm:px-4 text-center border-b border-[#2a2a2d]">
           <div className="container-custom flex items-center justify-center gap-4">
             <span className="hidden sm:inline text-[#b89c6c]">✦ Atelier Release 2026</span>
             <span>Complimentary Pan-India White-Glove Delivery</span>
@@ -74,13 +74,13 @@ export default function Navbar() {
           }`}
         >
           <div className="container-custom">
-            <nav className="flex items-center justify-between h-20">
+            <nav className="flex items-center justify-between h-16 md:h-20">
               {/* Brand Logo */}
               <Link href="/" className="flex flex-col group text-left">
-                <span className="font-serif text-2xl md:text-3xl tracking-tight text-[#161618] font-normal leading-none">
+                <span className="font-serif text-xl sm:text-2xl md:text-3xl tracking-tight text-[#161618] font-normal leading-none">
                   The Creations
                 </span>
-                <span className="text-[9px] tracking-[0.28em] text-[#8c734b] uppercase font-semibold mt-1">
+                <span className="text-[8px] sm:text-[9px] tracking-[0.22em] sm:tracking-[0.28em] text-[#8c734b] uppercase font-semibold mt-1">
                   Atelier & Resin Gallery
                 </span>
               </Link>

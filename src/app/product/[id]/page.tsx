@@ -122,7 +122,7 @@ function ProductDetailContent() {
   };
 
   return (
-    <main className="min-h-screen pt-28 md:pt-36 bg-[#faf8f5]">
+    <main className="min-h-screen pt-32 sm:pt-36 md:pt-40 lg:pt-44 bg-[#faf8f5]">
       {/* Breadcrumb Navigation */}
       <div className="container-custom py-4 border-b border-[#e8e3d8]">
         <nav className="flex items-center gap-2 text-xs text-[#73737c]">
@@ -514,7 +514,7 @@ function ProductDetailContent() {
 
 function ProductDetailSkeleton() {
   return (
-    <main className="min-h-screen pt-28 md:pt-36 bg-[#faf8f5]">
+    <main className="min-h-screen pt-32 sm:pt-36 md:pt-40 lg:pt-44 bg-[#faf8f5]">
       <div className="container-custom py-24 flex flex-col items-center justify-center min-h-[60vh]">
         <div className="relative mb-6">
           <div className="w-14 h-14 border-2 border-[#e8e3d8] border-t-[#8c734b] rounded-full animate-spin" />

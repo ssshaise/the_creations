@@ -163,7 +163,7 @@ export const useThemeStore = create<ThemeStore>()(
       },
     }),
     {
-      name: 'the-creations-theme',
+      name: 'the-creations-theme-v2',
     }
   )
 );

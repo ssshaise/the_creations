@@ -56,7 +56,7 @@ export default function Hero() {
   const slide = slides[current];
 
   return (
-    <section className="relative pt-24 pb-16 md:pt-32 md:pb-20 bg-[#faf8f5] border-b border-[#e8e3d8] overflow-hidden">
+    <section className="relative pt-32 sm:pt-36 md:pt-44 lg:pt-48 pb-16 md:pb-20 bg-[#faf8f5] border-b border-[#e8e3d8] overflow-hidden">
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
