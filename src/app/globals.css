@@ -94,7 +94,11 @@ body {
   backdrop-filter: blur(16px);
 }
 
-h1, h2, h3, h4, .font-serif {
+h1,
+h2,
+h3,
+h4,
+.font-serif {
   font-family: var(--font-serif);
   letter-spacing: -0.015em;
 }
@@ -219,7 +223,8 @@ h1, h2, h3, h4, .font-serif {
 }
 
 /* ─── Nocturnal Gallery / Dark Mode Design System ─── */
-html.dark, .dark {
+html.dark,
+.dark {
   /* Nocturnal Obsidian Gallery Palette */
   --bg-primary: #0c0c0e;
   --bg-secondary: #141417;
@@ -266,15 +271,19 @@ html.dark body {
 html.dark [class*="bg-[#faf8f5]"] {
   background-color: #0c0c0e !important;
 }
+
 html.dark [class*="bg-[#faf8f5]/95"] {
   background-color: rgba(12, 12, 14, 0.95) !important;
 }
+
 html.dark [class*="bg-[#f4efe6]"] {
   background-color: #141417 !important;
 }
+
 html.dark [class*="bg-[#ffffff]"] {
   background-color: #151518 !important;
 }
+
 html.dark [class*="bg-[#ede7dc]"] {
   background-color: #1c1c21 !important;
 }
@@ -283,9 +292,11 @@ html.dark [class*="bg-[#ede7dc]"] {
 html.dark [class*="text-[#161618]"] {
   color: #f5f2eb !important;
 }
+
 html.dark [class*="text-[#4a4a50]"] {
   color: #c2bfb5 !important;
 }
+
 html.dark [class*="text-[#73737c]"] {
   color: #87847a !important;
 }
@@ -294,9 +305,11 @@ html.dark [class*="text-[#73737c]"] {
 html.dark [class*="border-[#e8e3d8]"] {
   border-color: #24242a !important;
 }
+
 html.dark [class*="border-[#d4ccbd]"] {
   border-color: #363640 !important;
 }
+
 html.dark [class*="border-[#161618]"] {
   border-color: #f5f2eb !important;
 }
@@ -310,6 +323,7 @@ html.dark [class*="!bg-[#161618]"] {
   color: #0c0c0e !important;
   border-color: #f5f2eb !important;
 }
+
 html.dark .btn-gallery-primary:hover,
 html.dark button[class*="!bg-[#161618]"]:hover,
 html.dark a[class*="!bg-[#161618]"]:hover,
@@ -324,6 +338,7 @@ html.dark .btn-gallery-outline {
   color: #f5f2eb !important;
   background-color: transparent !important;
 }
+
 html.dark .btn-gallery-outline:hover {
   background-color: #f5f2eb !important;
   color: #0c0c0e !important;
@@ -337,6 +352,7 @@ html.dark select {
   color: #f5f2eb !important;
   border-color: #2e2e36 !important;
 }
+
 html.dark input:focus,
 html.dark textarea:focus,
 html.dark select:focus {
